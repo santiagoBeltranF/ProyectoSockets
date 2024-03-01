@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "c7b3ccb6-f853-4bdb-bf56-33b64c2cc2ec",
+		"name": "Reserves - distributedSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30467855"
+	},
+	"item": [
+		{
+			"name": "Paquetes turisticos",
+			"item": [
+				{
+					"name": "Obtener paquetes turisticos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseURL}}/admin/get-paquetes-turisticos",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"get-paquetes-turisticos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener paquete por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseURL}}/admin/get-paquetes-turisticos-by-id/3",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"get-paquetes-turisticos-by-id",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear paquete turistico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Salento paisaje cultural cafetero\",\r\n    \"fechaInicio\": \"2024-03-12\",\r\n    \"duracionDias\": 12,\r\n    \"cupoMaximo\": 20,\r\n    \"valorPaquete\": 200000.00,\r\n    \"destinos\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseURL}}/admin/save-paquetes-turisticos",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"save-paquetes-turisticos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar paquete turistico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseURL}}/admin/delete-paquetes-turisticos/3",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"admin",
+								"delete-paquetes-turisticos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Destinos",
+			"item": [
+				{
+					"name": "Obtener destinos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseURL}}/get-destinos",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"get-destinos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear destino",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Salento\",\r\n    \"foto\": \"files/foto_salento.png\",\r\n    \"paqueteTuristicoId\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseURL}}/save-destinos",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"save-destinos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar destinos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseURL}}/delete-destinos/1",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"delete-destinos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personas",
+			"item": [
+				{
+					"name": "Obtener personas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseURL}}/get-personas",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"get-personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar persona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Javier Rodriguez Marulanda\",\r\n    \"identificacion\": \"1004961706\",\r\n    \"direccion\": \"Cra. 14 # 3-11, Armenia, Quindío\",\r\n    \"telefono\": \"3125678797\",\r\n    \"email\": \"javier.rodriguez@gmail.com\",\r\n    \"numeroAcompanantes\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseURL}}/save-personas",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"save-personas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservas",
+			"item": [
+				{
+					"name": "Obtener reservas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{baseURL}}/get-reservas",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"get-reservas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guardar persoans",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroPersonas\": 15,\r\n    \"fecha\": \"2024-25-02\",\r\n    \"paqueteTuristicoId\": 4,\r\n    \"personaId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseURL}}/save-reserva",
+							"protocol": "http",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"save-reserva"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"value": "",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
